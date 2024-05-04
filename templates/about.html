@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Hide My Message</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="{{url_for('index')}}l">Hide My Message</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('index')}}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{url_for('about')}}">About this Project</a></li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('https://unsplash.com/photos/M5tzZtFCOfs/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8NDd8fGVuY3J5cHRpb258ZW58MHx8fHwxNzE0NzYxNzQ4fDA&force=true')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>How Hide My Message Works?</h1>
+                            <h2 class="subheading">Steganography + Encryption</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Hide My Message is a web application that allows users to send and receive messages in a unique way. The application uses steganography, a method of hiding information within non-secret data, to hide messages within image files. This provides an additional layer of security for the messages, as they are not visible without the correct key.                        </p>
+                        <h2 class="section-heading">Features</h2>
+                        <h3 class="section-subheading text">Encrypt a Message</h3>
+                        <p>Users can send a message by selecting an image file and entering their message. The application will then hide the message within the image file and provide a download link for the new image file. The original image file is not modified..</p>
+                        <p>To Encrypt a message:</p>
+
+                        <p>1. Click on the "Select an image" button and choose an image file from your device.</p>
+                        <p>2. Enter your message in the "Enter a message" field. </p>   
+                        <p>3. Click on the "Submit" button. The application will hide your message within the image file and provide a download link for the new image file.</p>
+                        <h3 class="section-subheading text">Decrypt a Message</h3>
+                        <p>Users can receive a message by uploading the image file that contains the hidden message. The application will extract the message from the image file and display it.</p>
+                        <p>To Decrypt a message:</p>
+                        <p>1. Click on the "Image" button and choose the image file that contains the hidden message from your device.</p>
+                        <p>2. Enter the key that was provided when the message was encrypted in the "Key" field.</p>
+                        <p>3. Click on the "Submit" button. The application will extract the message from the image file and display it.</p>
+                        <h2 class="section-heading">Security</h2>
+                        <p>Hide My Message uses steganography to hide messages within image files. This provides an additional layer of security for the messages, as they are not visible without the correct key. However, it is still important to use strong, unique keys to ensure the security of your messages.</p>
+                       
+                        <h2 class="section-heading">Mathematical Concepts used in Hide My Message</h2>
+                        <p>Hide My Message uses a combination of steganography and encryption to hide messages within image files. Both of these techniques involve mathematical concepts.</p>
+                        <h3 class="section-subheading text">Steganography</h3>
+                        <p>Steganography is the practice of concealing a message within another message or a physical object. In computing, steganography often involves hiding data within digital images, audio tracks, video clips, or other files.</p> 
+
+                            <p>   The mathematical concept behind steganography is quite simple. Digital images are made up of pixels, and each pixel is represented by three color values (red, green, and blue). Each color value is an 8-bit number, meaning it can range from 0 to 255.</p> 
+                            
+                                <p>   When hiding a message within an image, the least significant bit (LSB) of each color value can be changed to a bit from the message. This change is so small that it's virtually undetectable to the human eye, but it allows for a large amount of data to be hidden within the image.</p>
+                   <h3 class="section-subheading text">Encryption</h3>
+                        <p>Encryption is the process of converting information into a code to prevent unauthorized access. In Hide My Message, the message is encrypted before it is hidden within the image file. This adds an additional layer of security to the message, as it cannot be read without the correct key.</p>
+                        <p>   The mathematical concept behind encryption is based on algorithms that scramble the message in a specific way. The key is used to encrypt the message, and the same key is used to decrypt the message. This ensures that only the intended recipient can read the message.</p>
+                        <p>There are many different encryption algorithms, but most of them involve some form of mathematical operation, such as addition, multiplication, or modular arithmetic. For example, the Caesar cipher is a simple encryption algorithm that involves shifting each letter in the message by a certain number of places.</p>
+
+                        <p>More complex encryption algorithms, such as AES (Advanced Encryption Standard), involve multiple rounds of substitution, permutation, and mixing to transform the plaintext message into ciphertext.</p>
+
+                        <p>In the context of Hide My Message, the encryption key is used both to encrypt the message before it's hidden within the image, and to decrypt the message after it's extracted from the image. This ensures that even if someone discovers the hidden message, they won't be able to read it without the key.</p>
+                            
+                        <div>
+                            <h3 class="section-subheading text">AES Encryption</h3>
+                            <p>
+                                AES, or Advanced Encryption Standard, is a symmetric encryption algorithm that was established by the U.S. National Institute of Standards and Technology (NIST) in 2001. It is widely regarded as the most secure symmetric encryption algorithm available today and is used worldwide by governments, cybersecurity experts, and organizations to protect sensitive data.
+                            </p>
+                            <a href="#!"><img class="img-fluid" src="{{url_for('static', filename='image/2.jpg')}}" /></a>
+                            <h4>How AES Works</h4>
+                            <p>
+                                AES operates on blocks of data and uses a series of transformations, including substitution, permutation, and mixing, to convert plaintext into ciphertext. The same key is used for both encryption and decryption, making it a symmetric encryption algorithm.
+                            </p>
+                            <a href="#!"><img class="img-fluid" src="{{url_for('static', filename='image/1.jpg')}}" /></a>
+                            <p>
+                                Here's a brief overview of the steps involved in AES encryption:
+                            </p>
+                            <ul>
+                                <li>SubBytes: Each byte in the block is replaced with its entry in a fixed substitution table, the Rijndael S-box.</li>
+                                <li>ShiftRows: The bytes in each row of the block are shifted cyclically to the left. The number of places each byte is shifted differs for each row.</li>
+                                <li>MixColumns: Each column of the block is mixed using a transformation function. This function takes four bytes as input and outputs four bytes, where each input byte affects all four output bytes.</li>
+                                <li>AddRoundKey: The result is combined with a round key using bitwise exclusive OR (XOR).</li>
+                            </ul>
+                            <p>
+                                These steps are repeated for a number of rounds. The number of rounds depends on the key size: 10 rounds for a 128-bit key, 12 rounds for a 192-bit key, and 14 rounds for a 256-bit key.
+                            </p>
+                            <h4>Security of AES</h4>
+                            <p>
+                                AES is considered to be very secure. The largest successful brute-force attack against AES encryption was against a 128-bit key and required over a billion years of computing time. AES-256, with its larger key size, is even more secure.
+                            </p>
+                            <p>
+                                However, like all encryption algorithms, AES is not impervious to all attacks. Side-channel attacks, which exploit information gained from the physical implementation of the cryptosystem, can be effective against AES. Proper implementation and key management are crucial for maintaining the security of an AES-encrypted system.
+                            </p>
+                            <div>
+                                <h3 class="section-subheading text">LSB Steganography</h3>
+                                <p>
+                                    LSB Steganography is a common method of hiding data within digital media files. The term "Least Significant Bit" refers to the bit in a binary representation of a number that has the smallest value. In the context of digital images, each pixel is represented by three color values (red, green, and blue), and each color value is an 8-bit number.
+                                </p>
+                                <p>
+                                    In LSB Steganography, the least significant bit of each color value can be changed to a bit from the hidden message. This change is so small that it's virtually undetectable to the human eye, but it allows for a large amount of data to be hidden within the image.
+                                </p>
+                                <a href="#!"><img class="img-fluid" src="{{url_for('static', filename='image/3.png')}}" /></a>
+                                <p>
+                                    Here's a step-by-step process of how LSB Steganography works:
+                                </p>
+                                <ul>
+                                    <li>Convert the hidden message into a binary format.</li>
+                                    <li>For each bit in the binary message:
+                                        <ul>
+                                            <li>Find a pixel with three color values (red, green, blue).</li>
+                                            <li>Replace the least significant bit of each color value with a bit from the message.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Continue this process until every bit of the message is hidden within the image.</li>
+                                </ul>
+                                <p>
+                                    The hidden message can then be retrieved by reversing this process. LSB Steganography is a simple yet effective method of steganography, and it's widely used due to its simplicity and the difficulty in detecting the hidden message.
+                                </p>
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Hide My Message 2024</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+    </body>
+</html>
