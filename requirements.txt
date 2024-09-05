@@ -1,0 +1,6 @@
+flask
+stepic
+cryptography
+python-dotenv
+authlib
+requests
