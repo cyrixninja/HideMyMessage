@@ -36,11 +36,12 @@ def decode_message(img_path):
 
 # Web App API Endpoints
 from flask import Flask, request, send_file , render_template
+import json
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html", session=session.get('user'), pretty=json.dumps(session.get('user'), indent=4))
+    return render_template("index.html")
 
 @app.route('/about')
 def about():
@@ -77,69 +78,5 @@ def receive():
     key = request.form['key']
     message = decrypt_message(encrypted_message, key)
     return message
-
-
-# Authentication Logic
-
-# Importing the required libraries
-import json
-from os import environ as env
-from urllib.parse import quote_plus, urlencode
-from authlib.integrations.flask_client import OAuth
-from dotenv import find_dotenv, load_dotenv
-from flask import Flask, redirect, render_template, session, url_for
-
-# Load the environment variables from the .env file
-ENV_FILE = find_dotenv()
-if ENV_FILE:
-    load_dotenv(ENV_FILE)
-
-# Create the Flask app   
-app = Flask(__name__)
-app.secret_key = env.get("APP_SECRET_KEY")
-
-# Configure the OAuth provider
-oauth = OAuth(app)
-
-# Register the Auth0 provider
-oauth.register(
-    "auth0",
-    client_id=env.get("AUTH0_CLIENT_ID"),
-    client_secret=env.get("AUTH0_CLIENT_SECRET"),
-    client_kwargs={
-        "scope": "openid profile email",
-    },
-    server_metadata_url=f'https://{env.get("AUTH0_DOMAIN")}/.well-known/openid-configuration'
-)
-
-# Login Route
-@app.route("/login")
-def login():
-    return oauth.auth0.authorize_redirect(
-        redirect_uri=url_for("callback", _external=True)
-    )
-
-# Callback Route
-@app.route("/callback", methods=["GET", "POST"])
-def callback():
-    token = oauth.auth0.authorize_access_token()
-    session["user"] = token
-    return redirect("/")
-
-# Logout Route
-@app.route("/logout")
-def logout():
-    session.clear()
-    return redirect(
-        "https://" + env.get("AUTH0_DOMAIN")
-        + "/v2/logout?"
-        + urlencode(
-            {
-                "returnTo": url_for("index", _external=True),
-                "client_id": env.get("AUTH0_CLIENT_ID"),
-            },
-            quote_via=quote_plus,
-        )
-    )
 
 
