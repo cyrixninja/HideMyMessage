@@ -11,9 +11,10 @@ def generate_key():
     return Fernet.generate_key()
 
 def encrypt_message(message, key):
-    f = Fernet(key)
-    return f.encrypt(message.encode())
-
+    if not message:
+        raise ValueError("Message cannot be empty")
+    fernet = Fernet(key)
+    return fernet.encrypt(message.encode())
 
 def decrypt_message(encrypted_message, key):
     f = Fernet(key)
